@@ -14,6 +14,45 @@ includes:
   - errors
 
 ---
+# Introduction
+The Paynova API is the underlying interface for all our available client libraries.
+This reference guide was created for those who are developing for platforms currently not supported by our client libraries, or those who are interested in diving into the details of our API.
+
+# Entry Points
+# Authorization
+# Supported formats
+# Services
+Both REST and SOAP
+# REST Resources
+
+
+## Create Order
+This resource is designed to be a convenience resource for merchants who are only implementing simple orders. Note that if you use this resource, you are still allowed to send additional parameters in the payload if you wish, still allowing creation of full detailed orders.
+Note that the parameters taken from the URL (orderNumber, totalAmount and currencyCode) will replace any parameters received in the POST body.
+### HTTP REQUEST
+POST orders/create/{orderNumber}/{totalAmount}/{currencyCode}
+
+
+### Request Parameters
+Name | Description | 
+---------- | -------
+**orderNumber**<br>required|Your identifier for the order, most likely from your order management system.<BR>Validation: Free-text, preferably unique, minimum length = 4, maximum length = 50.
+**currencyCode**<br>required|The three-letter (alpha-3) ISO currency code or currency number as per ISO 4217.<BR>Example values: "SEK", "752".
+
+
+## Initialize Payment
+## Finalize Authorization
+## Anull Authorization
+## Refund Payment
+## Authorize Payment
+## Get Customer Profile
+## Remove Customer Profile
+## Remove Customer Profile Card
+# Supported locales
+# Currency codes
+# Error codes
+# Versioning
+
 
 # Introduction
 
